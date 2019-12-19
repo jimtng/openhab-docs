@@ -60,16 +60,20 @@ One can configure whether specific log entries are logged out and where they get
 - `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete
 - `executeCommandLine(String commandLine, int timeout)`: Executes a command on the command and waits timeout milliseconds for the command to complete, returning the output from the command as a String
 
-Note: The commandLine variable often has to use a special format where @@ needs to be used in place of spaces. For example the bash command touch somefile will have to be written as touch@@somefile.
+Note: The commandLine variable has to use `@@` instead of a space to separate the command line arguments. For example the bash command `touch "some file with space.txt"` will have to be written as `touch@@some file with space.txt`.
 
 ### HTTP Actions
 
 - `sendHttpGetRequest(String url)`: Sends an GET-HTTP request and returns the result as a String
+- `sendHttpGetRequest(String url, Map<String, String> headers, int timeout)`: Sends an GET-HTTP request with the given request headers and returns the result as a String
 - `sendHttpPutRequest(String url)`: Sends a PUT-HTTP request and returns the result as a String
 - `sendHttpPutRequest(String url, String contentType, String content)`: Sends a PUT-HTTP request with the given content and returns the result as a String
+- `sendHttpPutRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a PUT-HTTP request with the given content and request headers, and returns the result as a String
 - `sendHttpPostRequest(String url)`: Sends a POST-HTTP request and returns the result as a String
 - `sendHttpPostRequest(String url, String contentType, String content)`: Sends a POST-HTTP request with the given content and returns the result as a String
+- `sendHttpPostRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a POST-HTTP request with the given content and request headers, and returns the result as a String
 - `sendHttpDeleteRequest(String url)`: Sends a DELETE-HTTP request and returns the result as a String
+- `sendHttpDeleteRequest(String url, Map<String, String> headers, int timeout)`: Sends a DELETE-HTTP request with the given request headers and returns the result as a String
 
 Note: All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
 
