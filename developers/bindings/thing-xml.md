@@ -10,6 +10,8 @@ In order to work with _Things_ and _Channels_, some meta information about them 
 These are provided through 'ThingType' and 'ChannelType' definitions,
 which describe details about their functionality and configuration options.
 
+[brokenlink](https://blahblah.blah/asdfsfsafasf)
+
 [[toc]]
 
 ## ThingTypeProvider / ChannelTypeProvider
